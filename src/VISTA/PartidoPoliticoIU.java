@@ -15,20 +15,18 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PartidoPoliticoIU extends javax.swing.JFrame {
 
-    
     private registroPartidosPoliticos pp;
-    
+
     public PartidoPoliticoIU() {
         initComponents();
     }
-      public PartidoPoliticoIU(registroPartidosPoliticos pp) {
+
+    public PartidoPoliticoIU(registroPartidosPoliticos pp) {
         initComponents();
         this.pp = pp;
-        
-        
-        
-       
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -121,17 +119,17 @@ public class PartidoPoliticoIU extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-dispose();        // TODO add your handling code here:
+        dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-       VentanaPartidoPolitico p=new VentanaPartidoPolitico(this.pp);
-       p.setVisible(true);
+        VentanaPartidoPolitico p = new VentanaPartidoPolitico(this.pp);
+        p.setVisible(true);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-       TablaPartidoPublico tpp=new TablaPartidoPublico(this.pp);
-       tpp.setVisible(true);
+        TablaPartidoPublico tpp = new TablaPartidoPublico(this.pp);
+        tpp.setVisible(true);
     }//GEN-LAST:event_btnListarActionPerformed
 
     /**

@@ -12,6 +12,7 @@ import MODELOreg.*;
 public class VentanaGestion extends javax.swing.JFrame {
 
     private registroPartidosPoliticos p ;
+    private registroCandidatos c ;
     
     
     public VentanaGestion() {
@@ -64,6 +65,11 @@ public class VentanaGestion extends javax.swing.JFrame {
         jButton5.setText("Gestion de Miembros de Mesas");
 
         jButton6.setText("Gestion de Candidatos");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Conteo");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -179,6 +185,11 @@ public class VentanaGestion extends javax.swing.JFrame {
         PartidoPoliticoIU gpp = new PartidoPoliticoIU(p);
         gpp.setVisible(true);
     }//GEN-LAST:event_btnPartidosPoliticosActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        GestionCandidatos p = new GestionCandidatos(c);
+        p.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments

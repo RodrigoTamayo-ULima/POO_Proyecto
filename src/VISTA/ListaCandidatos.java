@@ -3,56 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package VISTA;
-import MODELOreg.*;
-import MODELOobj.*;
-import javax.swing.JOptionPane;
-import MODELOreg.registroPartidosPoliticos;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author rodri
  */
-public class TablaPartidoPublico extends javax.swing.JFrame {
-    
-    
-    private DefaultTableModel datos;
-    private registroPartidosPoliticos pp;
-    
-    
-    public TablaPartidoPublico() {
+public class ListaCandidatos extends javax.swing.JFrame {
+
+    /**
+     * Creates new form ListaCandidatos
+     */
+    public ListaCandidatos() {
         initComponents();
     }
-    
-     public TablaPartidoPublico(registroPartidosPoliticos p) {
-        initComponents();
-        this.pp=p;
-        
-        datos =new DefaultTableModel();
-       this.taDatos.setModel(datos);//la tabla TADATOS utilizara el modelo de la tabla creada datos
-       
-       datos.addColumn("Nombre");
-       datos.addColumn("Sigla");
-       datos.addColumn("Representante");
-       datos.addColumn("Logo / Simbolo");
-       
-      
-         
-         
-         for (int i = 0; i < pp.longitud(); i++) {
-           partidoPolitico a = pp.iesimo(i);
-            String[] fila = new String[4];
-            fila[0] = a.getNombre();
-            fila[1]=a.getSigla();
-            fila[2]=a.getRepresentanteLegal();
-            fila[3]=a.getLogoSimbolo();
-            
-             System.out.println(a.toString());
-            this.datos.addRow(fila);
-         }
-       
-       
-     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -64,11 +27,11 @@ public class TablaPartidoPublico extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        taDatos = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        taDatos.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -79,23 +42,23 @@ public class TablaPartidoPublico extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(taDatos);
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addGap(136, 136, 136)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(198, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addContainerGap(168, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
         );
 
         pack();
@@ -118,26 +81,26 @@ public class TablaPartidoPublico extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TablaPartidoPublico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaCandidatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TablaPartidoPublico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaCandidatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TablaPartidoPublico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaCandidatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TablaPartidoPublico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaCandidatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TablaPartidoPublico().setVisible(true);
+                new ListaCandidatos().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable taDatos;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
